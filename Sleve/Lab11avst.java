@@ -1,3 +1,4 @@
+package Sieve;
 // Lab11avst.java
 // The "Sieve of Eratosthenes" Program
 // This is the student, starting version of the Lab11a assignment.
@@ -22,11 +23,21 @@ public class Lab11avst
     public static void computePrimes(boolean primes[])
     {
         System.out.println("\nCOMPUTING PRIME NUMBERS");
-        System.out.print(primes[i] + "");
-            System.out.print(primes[i] + "");
-                primes[1] = true;
+        // Assume everything is prime
+        for(int i = 2; i <primes.length; i++){
+            primes[i] = true;
+        }
+        // Student edit starts here
+        for(int i = 2; i < primes.length; i++){
+            if (primes[i] == true){
+                for(int j = i + i; j < primes.length; j = j + i){
+                    primes[j] = false;
 
-        System.out.print(primes[i] + "");
+                }
+            }
+
+        }
+        // Student edit ends here
 
     }
 
@@ -34,17 +45,16 @@ public class Lab11avst
     {
         System.out.println("\n\nPRIMES BETWEEN 1 AND "+ primes.length);
         // Output all values of the list
-        for (int i = 2; i < primes.length; i++){
-            if(primes[i]}
-                System.out.print(primes[i] + "");
-
+        for(int i = 2; i < primes.length; i++){
+            if(primes[i] == true){
+                System.out.print(i+" ");
             }
+
+
 
         }
 
         System.out.println();
-
-
 
     }
 
